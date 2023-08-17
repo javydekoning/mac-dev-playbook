@@ -49,6 +49,7 @@ homebrew_installed_packages:
   - nmap
   - pv
   - zsh
+  - zsh-autocomplete
   - zsh-completions
   - zsh-history-substring-search
 
