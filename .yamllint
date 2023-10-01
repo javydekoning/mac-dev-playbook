@@ -9,4 +9,4 @@ rules:
     allowed-values: ['true', 'false', 'yes']
 
 ignore: |
-  .github/workflows/stale.yml
+  .github/workflows/*.yml

@@ -34,6 +34,7 @@ dotfiles_files:
 
 homebrew_installed_packages:
   - ansible
+  - ansible-lint
   - aws-sam-cli
   - docker
   - docker-completion
