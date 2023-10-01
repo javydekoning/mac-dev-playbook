@@ -7,7 +7,7 @@
     working_dir: "{{ lookup('env', 'COMPOSER_HOME') | default('~/.composer', true) }}"
   loop: "{{ composer_packages }}"
 
-- shell: ls -l /opt/homebrew/bin && find / -name 'npm'
+- shell: find / -name 'npm'
   register: ps
 - debug: var=ps.stdout_lines
 
