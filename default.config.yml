@@ -50,6 +50,7 @@ homebrew_installed_packages:
   - kustomize
   - node
   - nmap
+  - npm
   - pv
   - zsh
   - zsh-autocomplete
