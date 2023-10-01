@@ -66,7 +66,9 @@ jobs:
         run: ansible-playbook main.yml --syntax-check
 
       - name: Test the playbook.
-        run: ansible-playbook main.yml
+        run: |-
+          export PATH="/opt/homebrew/bin:$PATH"
+          ansible-playbook main.yml
         env:
           ANSIBLE_FORCE_COLOR: '1'
 
