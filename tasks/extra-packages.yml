@@ -7,10 +7,6 @@
     working_dir: "{{ lookup('env', 'COMPOSER_HOME') | default('~/.composer', true) }}"
   loop: "{{ composer_packages }}"
 
-- shell: find / -name 'npm'
-  register: ps
-- debug: var=ps.stdout_lines
-
 - name: Install global NPM packages.
   npm:
     name: "{{ item.name | default(item) }}"
