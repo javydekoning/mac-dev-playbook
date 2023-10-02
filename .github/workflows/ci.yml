@@ -67,7 +67,8 @@ jobs:
 
       - name: Test the playbook.
         run: |-
-          export PATH="/usr/local/lib/node_modules/:$PATH"
+          export PATH="/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core/Aliases:$PATH"
+          export PATH="/usr/local/lib/node_modules:$PATH"
           ansible-playbook main.yml
         env:
           ANSIBLE_FORCE_COLOR: '1'
