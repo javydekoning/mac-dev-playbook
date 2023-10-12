@@ -1,9 +1,12 @@
 ---
 - name: Setup SSM config in ~/.ssh/config
-  ansible.builtin.lineinfile:
+  ansible.builtin.blockinfile:
     path: ~/.ssh/config
-    line: |-
+    block: |
       # SSH over Session Manager
       host i-* mi-*
           ProxyCommand sh -c "aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p'"
     create: yes
+    register: ssh_config
+- ansible.builtin.debug:
+    var: ssh_config
