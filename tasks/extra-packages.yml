@@ -19,6 +19,7 @@
     global: true
     executable: "{{ item.executable | default(omit) }}"
   loop: "{{ npm_packages }}"
+  when: ansible_facts['env']['GITHUB_ACTIONS'] != 'true'
 
 - name: Install global Pip packages.
   pip:
