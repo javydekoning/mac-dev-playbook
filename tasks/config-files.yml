@@ -1,0 +1,9 @@
+---
+- name: Setup SSM config in ~/.ssh/config
+  ansible.builtin.blockinfile:
+    path: ~/.ssh/config
+    block: |
+      host i-* mi-*
+          ProxyCommand sh -c "aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p'"
+    create: yes
+    marker: "# {mark} SSM_CONFIG (Ansible Managed)"

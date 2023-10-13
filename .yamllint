@@ -5,6 +5,8 @@ rules:
   line-length:
     max: 180
     level: warning
+  truthy:
+    allowed-values: ['true', 'false', 'yes']
 
 ignore: |
-  .github/workflows/stale.yml
+  .github/workflows/*.yml

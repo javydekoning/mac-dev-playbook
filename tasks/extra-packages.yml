@@ -1,4 +1,8 @@
 ---
+# - name: Show facts available on the system
+#   ansible.builtin.debug:
+#     var: ansible_facts
+
 - name: Install global Composer packages.
   composer:
     command: "{{ (item.state | default('present') == 'absent') | ternary('remove', 'require') }}"
@@ -15,6 +19,7 @@
     global: true
     executable: "{{ item.executable | default(omit) }}"
   loop: "{{ npm_packages }}"
+  when: ansible_facts['env']['GITHUB_ACTIONS'] != 'true'
 
 - name: Install global Pip packages.
   pip:

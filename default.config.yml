@@ -24,62 +24,70 @@ sudoers_custom_config: ''
 #   # Allow users in admin group to use sudo with no password.
 #   %admin ALL=(ALL) NOPASSWD: ALL
 
-dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
+dotfiles_repo: https://github.com/javydekoning/dotfiles.git
 dotfiles_repo_accept_hostkey: true
-dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
+dotfiles_repo_local_destination: ~/github/dotfiles
+dotfiles_repo_version: main
 dotfiles_files:
   - .zshrc
-  - .gitignore
-  - .inputrc
-  - .osx
-  - .vimrc
+  - .tmux.conf
 
 homebrew_installed_packages:
-  # - ansible # Installed via Pip.
-  - autoconf
-  - bash-completion
-  - doxygen
-  - gettext
-  - gifsicle
+  - ansible
+  - ansible-lint
+  - aws-sam-cli
+  - docker
+  - docker-completion
+  - eks-node-viewer
+  - eksctl
   - git
-  - gh
   - go
-  - gpg
-  - httpie
-  - iperf
-  - libevent
-  - sqlite
-  - mcrypt
-  - nmap
+  - helm
+  - jq
+  - kube-capacity
+  - kubecolor
+  - kubernetes-cli
+  - kustomize
   - node
-  - nvm
-  - php
-  - ssh-copy-id
-  - cowsay
-  - readline
-  - openssl
+  - nmap
+  - npm
   - pv
-  - wget
-  - wrk
+  - zsh
+  - zsh-autocomplete
+  - zsh-completions
   - zsh-history-substring-search
 
 homebrew_taps:
-  - homebrew/core
+  - aws/tap
   - homebrew/cask
+  - homebrew/core
+  - kubecolor/tap
+  - robscott/tap
+  - homebrew/cask-fonts
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - chromedriver
+  - arc
+  - authy
   - docker
-  - dropbox
-  - firefox
-  - google-chrome
-  - handbrake
-  - licecap
-  - sequel-ace
-  - slack
+  - drawio
+  - fantastical
+  - font-hack-nerd-font
+  - iterm2
+  - logi-options-plus
+  - logitech-firmwareupdatetool
+  - microsoft-teams
+  - obsidian
+  - postman
+  - powershell
+  - rar
+  - raycast
+  - rectangle
+  - signal
   - sublime-text
-  - transmit
+  - session-manager-plugin
+  - visual-studio-code
+  - vlc
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: []
@@ -99,10 +107,12 @@ gem_packages: []
 # - name: bundler
 #   state: present # present/absent/latest, default: present
 #   version: "~> 1.15.1" # default: N/A
-npm_packages: []
-# - name: webpack
-#   state: present # present/absent/latest, default: present
-#   version: "^2.6" # default: N/A
+npm_packages:
+  # - name: webpack
+  #   state: present # present/absent/latest, default: present
+  #   version: "^2.6" # default: N/A
+  - name: aws-cdk
+
 pip_packages: []
 # - name: mkdocs
 #   state: present # present/absent/latest, default: present
@@ -112,19 +122,7 @@ pip_packages: []
 configure_sublime: false
 sublime_base_path: '~/Library/Application Support/Sublime Text'
 sublime_config_path: "Packages/User"
-sublime_package_control:
-  - "DocBlockr"
-  - "Dockerfile Syntax Highlighting"
-  - "FileDiffs"
-  - "GitHub Flavored Markdown Preview"
-  - "Jinja2"
-  - "Package Control"
-  - "PHP-Twig"
-  - "Pretty JSON"
-  - "SublimeLinter"
-  - "SublimeLinter-contrib-yamllint"
-  - "TrailingSpaces"
-  - "WordCount"
+sublime_package_control: []
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
