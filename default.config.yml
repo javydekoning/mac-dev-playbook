@@ -36,7 +36,7 @@ homebrew_installed_packages:
   - ansible
   - ansible-lint
   - aws-sam-cli
-  - docker
+  - homebrew/cask/docker
   - docker-completion
   - eks-node-viewer
   - eksctl
